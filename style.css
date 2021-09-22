@@ -1,0 +1,46 @@
+table {
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+hr {
+    opacity: 0.33;
+}
+
+#topRoast {
+    float: right;
+    width: 50%;
+    margin-right: 2em;
+}
+
+#coffeeNameTop {
+    float: right;
+    width: 50%;
+    margin-right: 2em;
+}
+
+.form-group:nth-child(1) {
+    margin-top: 1em;
+}
+
+
+.btn {
+    margin-top: 1em;
+    width: 100%;
+}
