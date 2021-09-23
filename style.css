@@ -14,28 +14,28 @@ td, th {
     font-family: "Roboto", sans-serif;
 }
 
+
 h2 {
     text-align: center;
     font-family: "Roboto", sans-serif;
+
 }
 
 hr {
     opacity: 0.33;
 }
 
-#topRoast {
+.formTop {
     float: right;
     width: 50%;
     margin-right: 2em;
 }
 
-#coffeeNameTop {
+
+.formBottom {
     float: right;
     width: 50%;
     margin-right: 2em;
-}
-
-.form-group:nth-child(1) {
     margin-top: 1em;
 }
 
