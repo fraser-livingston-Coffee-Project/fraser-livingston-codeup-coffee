@@ -68,16 +68,3 @@ coffeeNameBox.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 
-roastSelection.addEventListener("change", function() {
-    let selectedRoast = roastSelection.value;
-    let html = '';
-    coffees.forEach(coffee => {
-        if (selectedRoast === coffee.roast) {
-            console.log(renderCoffee(coffee));
-            darkness.innerHTML = html += renderCoffee(coffee);
-
-        } else if (selectedRoast === "all") {
-            darkness.innerHTML = renderCoffees(coffees);
-        }
-    })
-})
