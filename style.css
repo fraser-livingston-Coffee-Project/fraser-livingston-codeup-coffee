@@ -44,3 +44,7 @@ hr {
     margin-top: 1em;
     width: 100%;
 }
+.noshow {
+    display: none;
+
+}

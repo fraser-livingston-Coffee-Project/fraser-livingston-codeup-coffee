@@ -17,14 +17,15 @@
     <form class="formTop">
         <label for="roast-selection"><strong>Roast</strong></label>
         <select class="form-select" aria-label="Default select example" id="roast-selection">
-            <option selected>all</option>
-            <option value="1">light</option>
-            <option value="2">medium</option>
-            <option value="3">dark</option>
+            <option>all</option>
+            <option>light</option>
+            <option>medium</option>
+            <option>dark</option>
         </select>
         <div class="form-group">
             <label for="coffeeNameBox"><strong>Coffee Name</strong></label>
             <input type="text" class="form-control" id="coffeeNameBox">
+            <input type="search" onsearch="myFunction()" id="coffeeNameTop" placeholder="Search for coffee..">
             <button type="submit" id="submit"  class="btn btn-primary">Submit</button>
         </div>
         <hr>
@@ -46,16 +47,23 @@
             <button type="submit" id="add-submit"  class="btn btn-primary">Submit</button>
         </div>
     </form>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>ROAST</th>
-    </tr>
-    </thead>
-    <tbody id="coffees"></tbody>
-</table>
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th class="noshow">ID</th>-->
+<!--        <th>NAME</th>-->
+<!--        <th>ROAST</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody id="coffees"></tbody>-->
+<!--</table>-->
+
+<!--Left side content-->
+<div class="col order-1" >
+    <div class="row" id="coffees">
+    </div>
+</div>
+
 
 <script src="main.js"></script>
 </body>
