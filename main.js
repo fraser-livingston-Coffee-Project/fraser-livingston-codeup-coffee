@@ -23,21 +23,21 @@ function renderCoffees(coffees) {
 }
 
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update. sending to a server / updating the page
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        } else if (selectedRoast === "all")  {
-            // filteredCoffees = coffees;
-            filteredCoffees.push(coffee);
-
-        }
-    });
-    darkness.innerHTML = renderCoffees(filteredCoffees);
-}
+// function updateCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update. sending to a server / updating the page
+//     var selectedRoast = roastSelection.value;
+//     var filteredCoffees = [];
+//     coffees.forEach(function(coffee) {
+//         if (coffee.roast === selectedRoast) {
+//             filteredCoffees.push(coffee);
+//         } else if (selectedRoast === "all")  {
+//             // filteredCoffees = coffees;
+//             filteredCoffees.push(coffee);
+//
+//         }
+//     });
+//     darkness.innerHTML = renderCoffees(filteredCoffees);
+// }
 
 function searchCoffee(e) {
     e.preventDefault(); // < stops the form from doing default behavior
@@ -50,6 +50,22 @@ function searchCoffee(e) {
         }
     });
     console.log(filteredCoffees);
+    darkness.innerHTML = renderCoffees(filteredCoffees);
+}
+
+function selectBottomRoast(e) {
+    e.preventDefault();
+    var selectedRoast2 = addSelection.value;
+    var filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if (coffee.roast === selectedRoast2) {
+            filteredCoffees.push(coffee);
+        } else if (selectedRoast2 === "all")  {
+            // filteredCoffees = coffees;
+            filteredCoffees.push(coffee);
+
+        }
+    });
     darkness.innerHTML = renderCoffees(filteredCoffees);
 }
 
@@ -86,5 +102,5 @@ coffeeNameBox.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 nameSubmit.addEventListener('click', searchCoffee);
-
+addSubmit.addEventListener('click', selectBottomRoast)
 
