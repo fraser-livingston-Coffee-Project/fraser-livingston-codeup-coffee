@@ -6,10 +6,7 @@ function renderCoffee(coffee) {
     html += '<div class="noshow">' + coffee.id + '</div>';
     html += '<h2 class="coffeeName">' + coffee.name + '</h2>'
     html += '<p class="coffeeRoast">' + coffee.roast + '</p>'
-    // html += '<div>' + coffee.name + '</div>';
-    // html += '<div>' + coffee.roast + '</div>';
     html += '</div>';
-
     return html;
 }
 
@@ -52,33 +49,17 @@ function createANewCoffee(e){
 
 function searchCoffee(e) {
     e.preventDefault(); // < stops the form from doing default behavior
-    var selectedCoffee = coffeeNameBox.value;
+    var selectedCoffee = coffeeNameBox.value.toUpperCase();
     console.log(selectedCoffee);
     var filteredCoffees = [];
     coffees.forEach(function (coffee) {
-        if (coffee.name === selectedCoffee) {
+        if (coffee.name.toUpperCase() === selectedCoffee) {
             filteredCoffees.push(coffee);
         }
     });
     console.log(filteredCoffees);
     darkness.innerHTML = renderCoffees(filteredCoffees);
  }
-
-// function selectBottomRoast(e) {
-//     e.preventDefault();
-//     var selectedRoast2 = addSelection.value;
-//     var filteredCoffees = [];
-//     coffees.forEach(function(coffee) {
-//         if (coffee.roast === selectedRoast2) {
-//             filteredCoffees.push(coffee);
-//         } else if (selectedRoast2 === "all")  {
-//             // filteredCoffees = coffees;
-//             filteredCoffees.push(coffee);
-//
-//         }
-//     });
-//     darkness.innerHTML = renderCoffees(filteredCoffees);
-// }
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
