@@ -1,7 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Redressed', cursive;
+}
+
+h1.logo {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(https://images.pexels.com/photos/3749174/pexels-photo-3749174.jpeg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+
+
 table {
     border-collapse: collapse;
     margin: 15px 0;
 }
+
 
 td, th {
     border: 1px solid black;
