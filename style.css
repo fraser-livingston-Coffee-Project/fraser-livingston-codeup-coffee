@@ -48,7 +48,7 @@ h2 {
     text-align: center;
     font-family: "Roboto", sans-serif;
 }
-h2.addacafe {
+.addacafe {
     color: saddlebrown;
     font-family: "Roboto", sans-serif;
 }
@@ -93,4 +93,8 @@ p {
 }
 .fotobuttom {
 
+}
+
+#name-submit {
+    background-color: gray;
 }
