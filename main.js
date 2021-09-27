@@ -19,22 +19,34 @@ function renderCoffees(coffees) {
     return html;
 }
 
+function manRoast() {
+    roastSelection = document.querySelector('#roast-selection');
+    updateCoffees();
+}
 
-function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update. sending to a server / updating the page
+function manCoffee() {
+    nameBox = document.querySelector('#coffeeNameBox');
+    updateCoffees();
+}
+
+
+function updateCoffees() {
+    // e.preventDefault(); // don't submit the form, we just want to update. sending to a server / updating the page
     var selectedRoast = roastSelection.value;
+    var selectedCoffee = nameBox.value;
     var filteredCoffees = [];
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
-        } else if (selectedRoast === "all")  {
-            // filteredCoffees = coffees;
-            filteredCoffees.push(coffee);
-
+        if (coffee.roast === selectedRoast || "all" === selectedRoast) {
+            if (coffee.name.toUpperCase().includes(selectedCoffee.toUpperCase())) {
+                filteredCoffees.push(coffee);
+            }   else if ("" === selectedCoffee) {
+                filteredCoffees.push(coffee);
+            }
         }
     });
     darkness.innerHTML = renderCoffees(filteredCoffees);
 }
+
 function createANewCoffee(e){
     e.preventDefault();
     var newCoffee = newCoffeeName.value;
@@ -43,12 +55,13 @@ function createANewCoffee(e){
     coffees.push(addACoffee)
     console.log(coffees)
     darkness.innerHTML = renderCoffees(coffees);
+
 }
 
 
 function searchCoffee(e) {
     e.preventDefault(); // < stops the form from doing default behavior
-    var selectedCoffee = coffeeNameBox.value.toUpperCase();
+    var selectedCoffee = nameBox.value.toUpperCase();
     console.log(selectedCoffee);
     var filteredCoffees = [];
     coffees.forEach(function (coffee) {
@@ -58,41 +71,42 @@ function searchCoffee(e) {
     });
     console.log(filteredCoffees);
     darkness.innerHTML = renderCoffees(filteredCoffees);
- }
+}
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-    var coffees = [
-        {id: 1, name: 'Light City', roast: 'light'},
-        {id: 2, name: 'Half City', roast: 'light'},
-        {id: 3, name: 'Cinnamon', roast: 'light'},
-        {id: 4, name: 'City', roast: 'medium'},
-        {id: 5, name: 'American', roast: 'medium'},
-        {id: 6, name: 'Breakfast', roast: 'medium'},
-        {id: 7, name: 'High', roast: 'dark'},
-        {id: 8, name: 'Continental', roast: 'dark'},
-        {id: 9, name: 'New Orleans', roast: 'dark'},
-        {id: 10, name: 'European', roast: 'dark'},
-        {id: 11, name: 'Espresso', roast: 'dark'},
-        {id: 12, name: 'Viennese', roast: 'dark'},
-        {id: 13, name: 'Italian', roast: 'dark'},
-        {id: 14, name: 'French', roast: 'dark'},
-    ];
+var coffees = [
+    {id: 1, name: 'Light City', roast: 'light'},
+    {id: 2, name: 'Half City', roast: 'light'},
+    {id: 3, name: 'Cinnamon', roast: 'light'},
+    {id: 4, name: 'City', roast: 'medium'},
+    {id: 5, name: 'American', roast: 'medium'},
+    {id: 6, name: 'Breakfast', roast: 'medium'},
+    {id: 7, name: 'High', roast: 'dark'},
+    {id: 8, name: 'Continental', roast: 'dark'},
+    {id: 9, name: 'New Orleans', roast: 'dark'},
+    {id: 10, name: 'European', roast: 'dark'},
+    {id: 11, name: 'Espresso', roast: 'dark'},
+    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 13, name: 'Italian', roast: 'dark'},
+    {id: 14, name: 'French', roast: 'dark'},
+];
 
-    var darkness = document.querySelector('#coffees');
-    var submitButton = document.querySelector('#submit');
-    var roastSelection = document.querySelector('#roast-selection');
-    var coffeeNameBox = document.querySelector('#coffeeNameBox');
-    var addSubmit = document.querySelector('#add-submit');
-    var nameSubmit = document.querySelector('#name-submit');
-    darkness.innerHTML = renderCoffees(coffees);
-    coffeeNameBox.innerHTML = renderCoffees(coffees);
-    var newCoffeeName = document.querySelector('#add-input');
-    var addDarkness = document.querySelector('#add-selection');
+var darkness = document.querySelector('#coffees');
+var submitButton = document.querySelector('#submit');
+var roastSelection = document.querySelector('#roast-selection');
+var nameBox = document.querySelector('#coffeeNameBox');
+var addSubmit = document.querySelector('#add-submit');
+// var nameSubmit = document.querySelector('#name-submit');
+darkness.innerHTML = renderCoffees(coffees);
+coffeeNameBox.innerHTML = renderCoffees(coffees);
+var newCoffeeName = document.querySelector('#add-input');
+var addDarkness = document.querySelector('#add-selection');
 
 
-    submitButton.addEventListener('click', updateCoffees);
-    nameSubmit.addEventListener('click', searchCoffee);
-    addSubmit.addEventListener('click', createANewCoffee);
+// submitButton.addEventListener('click', updateCoffees);
+// document.getElementByName("name-submit").disabled = true;
+// nameSubmit.addEventListener('click', searchCoffee);
+addSubmit.addEventListener('click', createANewCoffee);
 
 

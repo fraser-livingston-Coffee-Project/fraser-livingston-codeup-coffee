@@ -17,7 +17,7 @@
 </header>
 <form class="formTop">
     <label for="roast-selection"><strong>Roast</strong></label>
-    <select class="form-select" aria-label="Default select example" id="roast-selection">
+    <select class="form-select" aria-label="Default select example" id="roast-selection" onchange="manRoast()">
         <option>all</option>
         <option>light</option>
         <option>medium</option>
@@ -25,9 +25,8 @@
     </select>
     <div class="form-group">
         <label for="coffeeNameBox"><strong>Coffee Name</strong></label>
-        <input type="text" class="form-control" id="coffeeNameBox">
-        <button type="submit" id="submit" class="btn btn-primary">Submit Roast Type</button>
-        <button type="submit" id="name-submit" class="btn btn-primary">Submit Coffee Name</button>
+        <input type="text" class="form-control" id="coffeeNameBox" oninput="manCoffee()">
+        <button type="submit" id="name-submit" class="btn btn-primary" disabled = true>Submit</button>
     </div>
     <hr>
 </form>
