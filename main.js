@@ -43,7 +43,6 @@ function createANewCoffee(e){
     coffees.push(addACoffee)
     console.log(coffees)
     darkness.innerHTML = renderCoffees(coffees);
-
 }
 
 
