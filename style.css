@@ -3,14 +3,27 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Redressed', cursive;
+    color: white;
+}
+body {
+    background-image: url("https://images.pexels.com/photos/3749174/pexels-photo-3749174.jpeg");
+    max-width:  100%;
+    height: 1350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1 {
+    color: saddlebrown;
 }
 
-h1.logo {
-    border: 10px solid black;
-    padding: 35px;
-    background: url(https://images.pexels.com/photos/3749174/pexels-photo-3749174.jpeg);
-    background-repeat: no-repeat;
-    background-origin: content-box;
+p.logo {
+
+    /*background: url(https://images.pexels.com/photos/3749174/pexels-photo-3749174.jpeg);*/
+    /*height: 1350px;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+
 }
 
 
@@ -35,7 +48,10 @@ td, th {
 h2 {
     text-align: center;
     font-family: "Roboto", sans-serif;
-
+}
+h2.addacafe {
+    color: saddlebrown;
+    font-family: "Roboto", sans-serif;
 }
 
 hr {
@@ -60,6 +76,7 @@ hr {
 .btn {
     margin-top: 1em;
     width: 100%;
+    background-color: gray;
 }
 .noshow {
     display: none;
@@ -74,4 +91,7 @@ hr {
 p {
     margin: 10px;
     opacity: .40;
+}
+.fotobuttom {
+
 }
